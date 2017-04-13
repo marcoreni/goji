@@ -15,10 +15,15 @@ import (
 
 // given services and a template, do the templating
 func Template(services ServiceList, templateFile string) (string, error) {
-	tmpl, err := template.ParseFiles(templateFile)
+	funcMap := template.FuncMap {
+        "getenv": os.Getenv,
+    }
+
+	tmpl, err := template.Funcs(funcMap).ParseFiles(templateFile)
 	if err != nil {
 		return "", err
 	}
+
 	buf := new(bytes.Buffer)
 	err = tmpl.Execute(buf, services)
 	if err != nil {
