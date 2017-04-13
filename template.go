@@ -19,7 +19,7 @@ func Template(services ServiceList, templateFile string) (string, error) {
         "getenv": os.Getenv,
     }
 
-	tmpl, err := template.Funcs(funcMap).ParseFiles(templateFile)
+	tmpl, err := template.New("templ").Funcs(funcMap).ParseFiles(templateFile)
 	if err != nil {
 		return "", err
 	}
