@@ -10,6 +10,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"text/template"
 )
 
@@ -19,7 +20,8 @@ func Template(services ServiceList, templateFile string) (string, error) {
 		"getenv": os.Getenv,
 	}
 
-	tmpl, err := template.New(templateFile).Funcs(funcMap).ParseFiles(templateFile)
+	tname := filepath.Base(templateFile)
+	tmpl, err := template.New(tname).Funcs(funcMap).ParseFiles(templateFile)
 	if err != nil {
 		return "", err
 	}
