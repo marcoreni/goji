@@ -3,11 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/byxorna/goji/marathon"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+
+	"./marathon"
 )
 
 func ListenForEvents(listenAddr string) error {

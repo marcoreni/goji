@@ -3,12 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/byxorna/goji/marathon"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"./marathon"
 )
 
 var (

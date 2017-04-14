@@ -4,8 +4,11 @@ import "fmt"
 
 type Task struct {
 	AppId              AppId               `json:"appId"`
+	SlaveId            string              `json:"slaveId"`
 	Id                 string              `json:"id"`
 	Ports              []int               `json:"ports"`
+	ServicePorts       []int               `json:"servicePorts"`
+	IpAddresses        []IpAddress         `json:"ipAddresses"`
 	Host               string              `json:"host"`
 	HealthCheckResults []HealthCheckResult `json:"healthCheckResults"`
 	stagedAt           string              `json:"stagedAt"`
@@ -34,5 +37,5 @@ func (a TaskList) Len() int           { return len(a) }
 func (a TaskList) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a TaskList) Less(i, j int) bool { return a[i].Id < a[j].Id }
 func (t *Task) String() string {
-  return fmt.Sprintf("%s on %s:%v",t.Id, t.Host, t.Ports)
+	return fmt.Sprintf("%s on %s:%v", t.Id, t.Host, t.Ports)
 }

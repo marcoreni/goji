@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/byxorna/goji/marathon"
 	"log"
 	"sort"
 	"strings"
+
+	"./marathon"
 )
 
 type Service struct {
