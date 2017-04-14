@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"./marathon"
+	"github.com/marcoreni/goji/marathon"
 )
 
 var (

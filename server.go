@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"./marathon"
+	"github.com/marcoreni/goji/marathon"
 )
 
 func ListenForEvents(listenAddr string) error {

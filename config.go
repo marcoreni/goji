@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"./marathon"
+	"github.com/marcoreni/goji/marathon"
 )
 
 type Config struct {

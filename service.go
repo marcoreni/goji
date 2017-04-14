@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"./marathon"
+	"github.com/marcoreni/goji/marathon"
 )
 
 type Service struct {
